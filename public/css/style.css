@@ -1,0 +1,60 @@
+input[type="text"]{
+
+}
+
+input[type=submit] {
+
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+div {
+    
+}
+label{
+	color: black;
+}
+
+input[type="text"]::-webkit-input-placeholder {
+  color: black;text-align: center;
+}
+input[type="text"]::-moz-placeholder { /* Firefox 19+ */
+  color: black;
+}
+input[type="text"]:-ms-input-placeholder { /* IE 10+ */
+  color: black;
+}
+input[type="text"]:-moz-placeholder { /* Firefox 18- */
+  color: black;
+}
+.input-field input[type=text]:focus {
+     border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+}
+
+.input-field input[type=email]:focus {
+     border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+}
+ /* valid color */
+.input-field input[type=text].valid {
+ border-bottom: 1px solid #000;
+ box-shadow: 0 1px 0 0 #000;
+}
+/* invalid color */
+.input-field input[type=text].invalid {
+ border-bottom: 1px solid #B20000;
+ box-shadow: 0 1px 0 0 #B20000;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+ color: #000;
+}
+.waves-effect.waves-brown .waves-ripple {
+     /* The alpha value allows the text and background color
+     of the button to still show through. */
+      background-color: rgba(0, 0, 0, 0.2);
+}
+      
