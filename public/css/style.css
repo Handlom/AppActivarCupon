@@ -57,4 +57,14 @@ input[type="text"]:-moz-placeholder { /* Firefox 18- */
      of the button to still show through. */
       background-color: rgba(0, 0, 0, 0.2);
 }
-      
+
+.fondoform{
+  background-image: url('../img/fondo_form.jpg'); 
+  background-size: 537px 600px;
+  width:537px;
+  height: 600px;
+}
+
+body{
+  background-color:#838383;
+}

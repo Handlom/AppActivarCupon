@@ -1,6 +1,8 @@
 'use strict';
 app.controller("generalCtrl", function($scope, $location, $firebaseObject, $firebaseArray, $http){
 
+	//console.log("Controller...");
+
 	var refRegExpoTextil = firebase.database().ref("registrosExpoTextil");
 
 	var registrosExpoTextilCupon = firebase.database().ref("registrosExpoTextilCupon");
@@ -43,8 +45,9 @@ app.controller("generalCtrl", function($scope, $location, $firebaseObject, $fire
 
 	$scope.valRuc = function(){
 		for (var i = 0; i < objtest.length; i++) {		
+			//console.log(objtest[i]);
 			if (objtest[i].ruc===$scope.objPersona.ruc) {
-				$scope.validacion='Este RUC ya fue registrado.';
+				$scope.validacion='Este RUC ya fue registrado/RUC invalido.';
 				$('#submit-btn').prop('disabled', true).addClass('disabled');
 				break;
 			}else{
@@ -56,25 +59,30 @@ app.controller("generalCtrl", function($scope, $location, $firebaseObject, $fire
 	}
 
 	$scope.valCupon = function(){
-		for (var i = 0; i < cupon.length; i++) {		
+		for (var i = 0; i < cupon.length; i++) {
+		//console.log(cupon[i]);
 			if (cupon[i].codicupon===$scope.objPersona.cupon) {
 				$scope.validacioncupon='';
+				//console.log("1er if...");
 				$('#submit-btn').prop('disabled', false).removeClass('enabled');	
 				for (var i = 0; i < objtest.length; i++) {
 					if (objtest[i].cupon===$scope.objPersona.cupon) {
 						$scope.validacioncupon='Este cupón ya fue registrado.';
-						console.log('deshabilitando...');
+						//console.log('cupon ya registrado...');
 						$('#submit-btn').prop('disabled', true).addClass('disabled');
+						break;
 					}else{
 						$scope.validacioncupon='';
 						$('#submit-btn').prop('disabled', false).removeClass('enabled');	
-						continue;}
+						continue;
+					}
 				}
-				continue;
+				break;
 			}else{
 				$scope.validacioncupon='Cupón invalido.';
+				//console.log('cupon invalido')
 				$('#submit-btn').prop('disabled', true).addClass('disabled');
-				break;
+				//break;
 			}	
 		}      	      
 	}
@@ -111,9 +119,10 @@ app.controller("generalCtrl", function($scope, $location, $firebaseObject, $fire
                         console.log(error);
         		});
         		$scope.objPersona={};
+        		$scope.msjsuccess='Su cupón ah sido activado, nos comunicaremos en breve con usted.';
 	            setTimeout(function(){ 
 					window.location.href="#index.html";
-				}, 3000);	                
+				}, 10000);	                
 				break;
 			}else{
 				$scope.validacion='';

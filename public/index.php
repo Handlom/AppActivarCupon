@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 // it will print whole json string, which you access after json_decocde in php
 //$myData = json_decode($_POST['nombrescompletos']);
@@ -16,7 +16,7 @@ $codigodecupon = $request->codigodecupon;
 
 $template="La empresa ". $razonsocial . " activó su cupón. Los datos de la activación son los siguientes:" . "<br><br>" .  "- Contacto: " . $nombres . "<br>"  . "- Razón Social: " . $razonsocial . "<br>"  . "- Ruc: " . $ruc . "<br>"  . "- Telefono: " . $telefono . "<br>" . "- Email: " . $email . "<br>" . "- Servicio de interés: " . $serviciodeinteres . "<br>" . "- Cupón activado: " . $codigodecupon . "<br><br>" . "Atte." . "<br>" . "Roger Canchanya - Analista Programador.";
 
-$correo= "tony2006cg@gmail.com";
+$correo= "lothar.seer@handlom.com";
 
 $subject = "Activación del cupón: " . $codigodecupon;
 
